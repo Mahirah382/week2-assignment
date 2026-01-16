@@ -54,7 +54,7 @@ function createBigImage(image) {
 
 document.addEventListener('keydown', function(event) {
   console.log(event)
-  if (Event.key === "ArrowRight") 
+  if (event.key === "ArrowRight") 
     return
 
      const current = document.querySelector('.thumbnail.active')
