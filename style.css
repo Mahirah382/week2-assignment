@@ -1,8 +1,8 @@
 .thumbnails {
-    height: 20vh;
+    height: 10vh;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     position: relative;
     z-index: 10;
     gap:5px;
@@ -43,12 +43,10 @@
     .thumbnails {
     height: 20vh;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     position: relative;
     z-index: 10;
-    padding:40px;
     gap:5px;
 
 }

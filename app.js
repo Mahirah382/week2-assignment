@@ -20,15 +20,20 @@ const images = [
 ]
 
 function createThumbnails() {
-    images.forEach(function(image){
+    images.forEach(function(image,i){
         const imageElement = document.createElement('img')
 
         imageElement.src = image.src
         imageElement.alt = image.alt
 
-        imageElement.addEventListener('click', function () {
-          console.log(image)
+        imageElement.classList.add("thumbnail")
+        if (i === 0) {
+          imageElement.classList.add("active")
           createBigImage(image)
+        }
+
+        imageElement.addEventListener('click', function () {
+          setActiveThumbnail(imageElement, image)
         })
 
         thumbnailContainer.append(imageElement)
@@ -46,4 +51,23 @@ function createBigImage(image) {
 
   bigDisplay.append (bigImage)
 }
+
+document.addEventListener('keydown', function(event) {
+  console.log(event)
+  if (Event.key === "ArrowRight") 
+    return
+
+     const current = document.querySelector('.thumbnail.active')
+     const next = current.nextElementSibling || document.querySelector('.thumbnail')
+
+     current.classList.remove('active')
+     next.classList.add('active')
+
+     bigDisplay.innerHTML = ''
+     const bigImage = document.createElement('img')
+     bigImage.src = next.src 
+     bigDisplay.append(bigImage)
+
+  
+})
 
