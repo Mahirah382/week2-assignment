@@ -33,7 +33,7 @@ function createThumbnails() {
         }
 
         imageElement.addEventListener('click', function () {
-          setActiveThumbnail(imageElement, image)
+          createBigImage(imageElement, image)
         })
 
         thumbnailContainer.append(imageElement)
@@ -54,8 +54,7 @@ function createBigImage(image) {
 
 document.addEventListener('keydown', function(event) {
   console.log(event)
-  if (event.key === "ArrowRight") 
-    return
+  if (event.key === "ArrowRight") { 
 
      const current = document.querySelector('.thumbnail.active')
      const next = current.nextElementSibling || document.querySelector('.thumbnail')
@@ -68,6 +67,7 @@ document.addEventListener('keydown', function(event) {
      bigImage.src = next.src 
      bigDisplay.append(bigImage)
 
-  
+  return;
+  }
 })
 

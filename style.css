@@ -2,10 +2,12 @@
     height: 10vh;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     position: relative;
     z-index: 10;
     gap:5px;
+    top: 550px;
 
 }
 
@@ -41,14 +43,14 @@
 
 @media (min-width: 750px) {
     .thumbnails {
-    height: 20vh;
+    height: auto;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
     position: relative;
     z-index: 10;
     gap:5px;
-
+    top: 50px;
 }
 
 .thumbnails img {
